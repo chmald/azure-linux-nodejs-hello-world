@@ -15,5 +15,10 @@ RUN apt-get update \
 EXPOSE 2222 8080
 
 ENV PORT 8080
+ENV WEBSITE_ROLE_INSTANCE_ID localRoleInstance
+ENV WEBSITE_INSTANCE_ID localInstance
+ENV PATH ${PATH}:/opt/app
+
+WORKDIR /opt/app
 
 ENTRYPOINT ["/opt/app/init_container.sh"]
